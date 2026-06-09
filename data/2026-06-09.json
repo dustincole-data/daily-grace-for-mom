@@ -1,7 +1,14 @@
 {
-  "generated_at": "2026-06-09T17:05:39.888850-04:00",
+  "generated_at": "2026-06-09T17:51:31.383780-04:00",
   "display_date": "Tuesday, June 9, 2026",
-  "dedication": "For Mom",
+  "site_title": "Daily Grace for Meme",
+  "site_url": "https://dustincole-data.github.io/daily-grace-for-mom/",
+  "dedication": "For Meme",
+  "daily_image": {
+    "file": "meme-09.jpeg",
+    "alt": "A loving family photo for Meme",
+    "url": "assets/photos/meme-09.jpeg"
+  },
   "prayer": {
     "title": "Hail Mary",
     "text": "Hail Mary, full of grace, the Lord is with thee. Blessed art thou among women, and blessed is the fruit of thy womb, Jesus. Holy Mary, Mother of God, pray for us sinners, now and at the hour of our death. Amen.",

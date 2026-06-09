@@ -6,6 +6,12 @@ async function loadDailyGrace() {
 
     document.getElementById('display-date').textContent = data.display_date;
     document.getElementById('prayer-title').textContent = data.prayer.title;
+
+    const dailyImage = document.getElementById('daily-image');
+    if (data.daily_image && dailyImage) {
+      dailyImage.src = `${data.daily_image.url}?ts=${Date.now()}`;
+      dailyImage.alt = data.daily_image.alt || 'A loving family photo for Meme';
+    }
     document.getElementById('prayer-text').textContent = data.prayer.text;
 
     const source = document.getElementById('prayer-source');

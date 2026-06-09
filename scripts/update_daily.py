@@ -1,5 +1,5 @@
 #!/usr/bin/env python3
-"""Generate the daily Catholic prayer/thought content for Mom's comfort site.
+"""Generate the daily Catholic prayer/thought content for Meme's comfort site.
 
 No network is required. The site links to the USCCB daily readings rather than
 copying full readings, keeping the page reliable and respectful of source rights.
@@ -14,7 +14,22 @@ from zoneinfo import ZoneInfo
 
 ROOT = Path(__file__).resolve().parents[1]
 DATA_DIR = ROOT / "data"
+PHOTO_DIR = ROOT / "assets" / "photos"
 TZ = ZoneInfo(os.environ.get("PRAYER_SITE_TZ", "America/New_York"))
+SITE_URL = "https://dustincole-data.github.io/daily-grace-for-mom/"
+
+DAILY_IMAGES = [
+    {"file": "meme-01.jpeg", "alt": "A loving family photo for Meme"},
+    {"file": "meme-02.jpeg", "alt": "A loving family photo for Meme"},
+    {"file": "meme-03.jpeg", "alt": "A loving family photo for Meme"},
+    {"file": "meme-04.jpeg", "alt": "A loving family photo for Meme"},
+    {"file": "meme-05.jpeg", "alt": "A loving family photo for Meme"},
+    {"file": "meme-06.jpeg", "alt": "A loving family photo for Meme"},
+    {"file": "meme-07.jpeg", "alt": "A loving family photo for Meme"},
+    {"file": "meme-08.jpeg", "alt": "A loving family photo for Meme"},
+    {"file": "meme-09.jpeg", "alt": "A loving family photo for Meme"},
+    {"file": "meme-10.jpeg", "alt": "A loving family photo for Meme"},
+]
 
 PRAYERS = [
     {
@@ -128,7 +143,13 @@ def main() -> None:
     payload = {
         "generated_at": now.isoformat(),
         "display_date": now.strftime("%A, %B %-d, %Y") if os.name != "nt" else now.strftime("%A, %B %#d, %Y"),
-        "dedication": "For Mom",
+        "site_title": "Daily Grace for Meme",
+        "site_url": SITE_URL,
+        "dedication": "For Meme",
+        "daily_image": {
+            **pick(DAILY_IMAGES, day_index, 6),
+            "url": f"assets/photos/{pick(DAILY_IMAGES, day_index, 6)['file']}",
+        },
         "prayer": prayer,
         "thought": thought,
         "blessing": pick(BLESSINGS, day_index, 4),
