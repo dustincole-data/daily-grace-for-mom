@@ -1,0 +1,76 @@
+<!doctype html>
+<html lang="en">
+<head>
+  <meta charset="utf-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1" />
+  <title>Daily Grace for Mom</title>
+  <meta name="description" content="A gentle Catholic daily prayer and reflection page for Mom." />
+  <link rel="preconnect" href="https://fonts.googleapis.com">
+  <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+  <link href="https://fonts.googleapis.com/css2?family=Cormorant+Garamond:wght@500;600;700&family=Inter:wght@300;400;500;600;700&display=swap" rel="stylesheet">
+  <link rel="stylesheet" href="styles.css" />
+</head>
+<body>
+  <main class="page-shell">
+    <section class="hero" aria-labelledby="page-title">
+      <div class="halo" aria-hidden="true"></div>
+      <p class="eyebrow">Catholic morning prayer · renewed daily at 6:00 AM</p>
+      <h1 id="page-title">Daily Grace<br />for Mom</h1>
+      <p class="hero-copy">A quiet place for comfort, prayer, and hope — one day at a time.</p>
+      <div class="date-card" aria-live="polite">
+        <span id="display-date">Loading today’s blessing…</span>
+      </div>
+    </section>
+
+    <section class="content-grid">
+      <article class="card prayer-card">
+        <div class="card-topline">
+          <span class="icon" aria-hidden="true">✚</span>
+          <span>Today’s Prayer</span>
+        </div>
+        <h2 id="prayer-title">Prayer</h2>
+        <p id="prayer-text" class="prayer-text">Loading…</p>
+        <a id="prayer-source" href="https://www.usccb.org/prayers/morning-offering" target="_blank" rel="noopener">Prayer source</a>
+      </article>
+
+      <article class="card thought-card">
+        <div class="card-topline">
+          <span class="icon" aria-hidden="true">☀</span>
+          <span>Gentle Thought</span>
+        </div>
+        <h2 id="thought-headline">Thought</h2>
+        <p id="thought-body">Loading…</p>
+        <blockquote id="verse"></blockquote>
+      </article>
+    </section>
+
+    <section class="comfort-panel">
+      <div>
+        <p class="eyebrow dark">A small practice for today</p>
+        <h2 id="practice">Jesus, I trust in You.</h2>
+      </div>
+      <div class="rosary-line" aria-hidden="true">
+        <span></span><span></span><span></span><span class="cross">✚</span><span></span><span></span><span></span>
+      </div>
+    </section>
+
+    <section class="lower-grid">
+      <article class="mini-card">
+        <h3>Today’s Blessing</h3>
+        <p id="blessing">May the Lord bless you and keep you.</p>
+      </article>
+      <article class="mini-card readings">
+        <h3>Daily Mass Readings</h3>
+        <p id="readings-note">Read or listen to today’s Catholic Mass readings.</p>
+        <a id="readings-link" href="https://bible.usccb.org/" target="_blank" rel="noopener">Open USCCB readings →</a>
+      </article>
+    </section>
+
+    <footer>
+      <p>Made with love. Updated every morning by a small cron job.</p>
+    </footer>
+  </main>
+
+  <script src="app.js"></script>
+</body>
+</html>

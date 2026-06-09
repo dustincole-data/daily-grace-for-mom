@@ -1,0 +1,28 @@
+name: Daily prayer update
+
+on:
+  schedule:
+    # GitHub Actions cron is UTC. 10:00 UTC is 6:00 AM Eastern during daylight time.
+    - cron: '0 10 * * *'
+  workflow_dispatch:
+
+permissions:
+  contents: write
+
+jobs:
+  update-daily-prayer:
+    runs-on: ubuntu-latest
+    steps:
+      - name: Check out site
+        uses: actions/checkout@v4
+
+      - name: Generate today's prayer
+        env:
+          PRAYER_SITE_TZ: America/New_York
+        run: python3 scripts/update_daily.py
+
+      - name: Commit updated daily content
+        uses: stefanzweifel/git-auto-commit-action@v5
+        with:
+          commit_message: "Update daily prayer"
+          file_pattern: data/*.json
